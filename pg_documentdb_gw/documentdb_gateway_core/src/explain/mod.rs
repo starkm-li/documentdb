@@ -2339,7 +2339,7 @@ mod tests {
             }
         ]);
 
-        let parsed: Result<Vec<super::model::PostgresExplain>, _> =
+        let parsed: serde_json::Result<Vec<super::model::PostgresExplain>> =
             serde_json::from_value(pg18_explain);
 
         let plans = parsed.expect("PG18 fractional row counts must deserialize");
